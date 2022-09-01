@@ -1,5 +1,6 @@
 package com.desafio.desafiogit.model;
 
+import com.desafio.desafiogit.model.enumeric.Categorias;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,20 +17,14 @@ import javax.persistence.*;
 public class CursoModel {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY )
-    private Long idCurso;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-
-    @Column(name = "nome_do_curso",length = 50, nullable = false)
+    @Column(name = "nome_do_curso", length = 50, nullable = false)
     private String nome;
 
     @Enumerated(EnumType.STRING)
-    private String categoria;
-
-
-
-
-
+    private Categorias categorias;
 
 
 }
