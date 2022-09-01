@@ -13,7 +13,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-
+@Table(name= "Topico")
 public class TopicoModel {
 
     @Id
