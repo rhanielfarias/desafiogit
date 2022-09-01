@@ -22,5 +22,17 @@ public class TopicoService {
         return gitRepository.findByTitulo(titulo);
     }
 
+    public TopicoModel cadastraTopico (TopicoModel topicoModel){
+        return gitRepository.save(topicoModel);
+    }
+
+    public TopicoModel alteraTopico (TopicoModel topicoModel){
+        return gitRepository.save(topicoModel);
+    }
+
+    public void deletaTopico(Long id){
+        gitRepository.deleteById(id);
+    }
+
 
 }
