@@ -24,7 +24,7 @@ public class RespostaService {
     public RespostaModel novaResposta(RespostaModel respostaModel, DefinirStatus definirStatus){
         String novoStatus = String.valueOf(definirStatus.decidirStatus(respostaModel.getStatus()));
         respostaModel.getId();
-        respostaModel.getDataCraicao();
+        respostaModel.getDataCriacao();
         respostaModel.getSolucao();
         respostaModel.setStatus(novoStatus);
         return respostaRepository.save(respostaModel);
