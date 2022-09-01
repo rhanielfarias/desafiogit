@@ -10,6 +10,6 @@ import java.util.List;
 @Repository
 public interface GitRepository extends JpaRepository<TopicoModel, Long> {
 
-    public List<TopicoModel> findByTopico (String titulo);
+    public List<TopicoModel> findByTitulo(String titulo);
 
 }

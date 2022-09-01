@@ -20,7 +20,7 @@ public class TopicoController {
         return topicoService.buscaPorId(id);
     }
 
-    @GetMapping(path = "/topico")
+    @GetMapping(path = "/titulo/{titulo}")
     public ResponseEntity<List<TopicoModel>> buscaTopico(@PathVariable String titulo){
         return ResponseEntity.ok(topicoService.buscaTopico(titulo));
     }

@@ -19,7 +19,7 @@ public class TopicoService {
     }
 
     public List<TopicoModel> buscaTopico (String titulo){
-        return gitRepository.findByTopico(titulo);
+        return gitRepository.findByTitulo(titulo);
     }
 
 
