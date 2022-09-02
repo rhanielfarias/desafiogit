@@ -1,5 +1,6 @@
 package com.desafio.desafiogit.controller;
 
+import com.desafio.desafiogit.controller.dto.NomeEmail;
 import com.desafio.desafiogit.model.UsuarioModel;
 import com.desafio.desafiogit.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,9 +27,10 @@ public class UsuarioController {
     }
 
     @PostMapping(path = "/usuario")
-    public ResponseEntity<UsuarioModel> cadastrarUsuario(@RequestBody UsuarioModel usuarioModel) {
+    public ResponseEntity<NomeEmail> cadastrarUsuario(@RequestBody UsuarioModel usuarioModel) {
         UsuarioModel usuario = usuarioService.cadastrar(usuarioModel);
-        return new ResponseEntity<>(usuario, HttpStatus.CREATED);
+        NomeEmail nomeEmailDto = new NomeEmail(usuarioModel.getId(), usuario.getNome(), usuario.getEMail());
+        return new ResponseEntity<>(nomeEmailDto, HttpStatus.CREATED);
     }
 
     @PutMapping(path = "/usuario/{codigo}")
