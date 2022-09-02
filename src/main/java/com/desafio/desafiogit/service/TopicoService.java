@@ -3,7 +3,6 @@ package com.desafio.desafiogit.service;
 import com.desafio.desafiogit.model.TopicoModel;
 import com.desafio.desafiogit.repository.GitRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,7 +19,19 @@ public class TopicoService {
     }
 
     public List<TopicoModel> buscaTopico (String titulo){
-        return gitRepository.findByTopico(titulo);
+        return gitRepository.findByTitulo(titulo);
+    }
+
+    public TopicoModel cadastraTopico (TopicoModel topicoModel){
+        return gitRepository.save(topicoModel);
+    }
+
+    public TopicoModel alteraTopico (TopicoModel topicoModel){
+        return gitRepository.save(topicoModel);
+    }
+
+    public void deletaTopico(Long id){
+        gitRepository.deleteById(id);
     }
 
 

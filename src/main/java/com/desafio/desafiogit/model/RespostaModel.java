@@ -21,7 +21,7 @@ public class RespostaModel {
     @Column
     private String mensagem;
     @Column
-    private LocalDate dataCraicao;
+    private LocalDate dataCriacao;
     @Column
     private Boolean solucao;
     @Column
